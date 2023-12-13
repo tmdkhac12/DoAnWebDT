@@ -13,7 +13,7 @@
 
 	/* <li> trong homeproduct có class="sanPham" , khai báo trong classes.js */
 	.sanPham {
-		width: 238px;
+		width: 22%;
 		border: 1px solid #eee;
     	-webkit-transition-duration: .3s;
     	     -o-transition-duration: .3s;
