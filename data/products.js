@@ -319,7 +319,7 @@ var list_products = [{
         "microUSB": "MicroSD, hỗ trợ tối đa 256 GB",
         "battery": "3300 mAh"
     },
-    "masp": "Sam12"
+    "masp": "Sam13"
 }, {
     "name": "SamSung Galaxy S23 Ultra",
     "company": "Samsung",
