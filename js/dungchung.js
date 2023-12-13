@@ -518,7 +518,7 @@ function addProduct(p, ele, returnString) {
 // Thêm topnav vào trang
 function addTopNav() {
     document.write(`    
-	<div class="top-nav group">
+	<div class="top-nav group" style="display: none">
         <section>
             <div class="social-top-nav">
                 <a class="fa fa-facebook"></a>

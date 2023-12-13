@@ -99,7 +99,7 @@ window.onload = function () {
 	addAllChoosedFilter();
 };
 
-var soLuongSanPhamMaxTrongMotTrang = 15;
+var soLuongSanPhamMaxTrongMotTrang = 8;
 
 // =========== Đọc dữ liệu từ url ============
 var filtersFromUrl = { // Các bộ lọc tìm được trên url sẽ đc lưu vào đây
