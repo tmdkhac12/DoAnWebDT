@@ -560,7 +560,7 @@ function addHeader() {
                         </button>
                     </div>
                 </form> <!-- End Form search -->
-                <div class="tags">
+                <div class="tags" style="display: none;">
                     <strong>Từ khóa: </strong>
                 </div>
             </div> <!-- End Search header -->
