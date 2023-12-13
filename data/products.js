@@ -444,7 +444,7 @@ var list_products = [{
     "rateCount": 10,
     "promo": {
         "name": "giareonline",
-        "value": "0"
+        "value": "7.290.000"
     },
     "detail": {
         "screen": "OLED, 5.8', Super Retina",
