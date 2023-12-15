@@ -7,16 +7,13 @@ window.onload = function () {
 
     addEventChangeTab();
 
-    if (window.localStorage.getItem('admin')) {
+   
         addTableProducts();
         addTableDonHang();
         addTableKhachHang();
         addThongKe();
 
         openTab('Trang Chủ')
-    } else {
-        document.body.innerHTML = `<h1 style="color:red; with:100%; text-align:center; margin: 50px;"> Truy cập bị từ chối.. </h1>`;
-    }
 }
 
 function logOutAdmin() {
@@ -760,6 +757,7 @@ function addTableKhachHang() {
                     <i class="fa fa-remove" onclick="xoaNguoiDung('`+u.username+`')"></i>
                     <span class="tooltiptext">Xóa</span>
                 </div>
+                <i class="fa fa-edit" onclick="suaNguoiDung('`+u.username+`')"></i>
             </td>
         </tr>`;
     }
@@ -767,7 +765,75 @@ function addTableKhachHang() {
     s += `</table>`;
     tc.innerHTML = s;
 }
+function suaNguoiDung(username) {
+    var listUser = getListUser();
+    var user;
 
+    for (var i = 0; i < listUser.length; i++) {
+        if (listUser[i].username === username) {
+            user = listUser[i];
+            break;
+        }
+    }
+
+    if (!user) {
+        console.log("Không tìm thấy người dùng.");
+        return;
+    }
+
+    var s = `<span class="close" onclick="this.parentElement.style.transform = 'scale(0)';">&times;</span>
+    <table class="overlayTable table-outline table-content table-header">
+        <tr>
+            <th colspan="2">` + user.ho + ' ' + user.ten + `</th>
+        </tr>
+        <tr>
+            <td>Họ:</td>
+            <td><input type="text" value="` + user.ho + `"></td>
+        </tr>
+        <tr>
+            <td>Tên:</td>
+            <td><input type="text" value="` + user.ten + `"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" value="` + user.email + `"></td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" value="` + user.username + `"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" value="` + user.pass + `"></td>
+        </tr>
+        <tr>
+            <td>Trạng thái:</td>
+            <td>
+                <label class="switch">
+                    <input type="checkbox" ` + (user.off ? '' : 'checked') + ` onclick="voHieuHoaNguoiDung(this, '` + user.username + `')">
+                    <span class="slider round"></span>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="table-footer"><button onclick="suaSanPham()">SỬA</button></td>
+        </tr>
+    </table>`;
+
+    var khung = document.getElementById('khungSuaNguoiDung');
+    khung.innerHTML = s;
+    khung.style.transform = 'scale(1)';
+   
+}
+function suaSanPham(){
+    alert("Sửa thành công ");
+    var khung = document.getElementById('khungSuaNguoiDung');
+    khung.style.transform = 'scale(0)';
+}
+function themKhachHang(){
+    alert(Them +thành +công)
+    document.getElementById('khungSuaNguoiDung').style.display = 'none';
+}
 // Tìm kiếm
 function timKiemNguoiDung(inp) {
     var kieuTim = document.getElementsByName('kieuTimKhachHang')[0].value;
