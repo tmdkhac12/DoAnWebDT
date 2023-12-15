@@ -272,8 +272,42 @@
                     <option value="taikhoan">Tìm theo tài khoản</option>
                 </select>
                 <input type="text" placeholder="Tìm kiếm..." onkeyup="timKiemNguoiDung(this)">
-                <button onclick="openThemNguoiDung()"><i class="fa fa-plus-square"></i> Thêm người dùng</button>
+                <button onclick="document.getElementById('Khungthemkhachhang').style.transform = 'scale(1)'; autoMaSanPham()">
+                    <i class="fa fa-plus-square"></i>
+                    Thêm khách hàng
+                </button>
             </div>
+            <div id="Khungthemkhachhang" class="overlay">
+                <span class="close" onclick="this.parentElement.style.transform = 'scale(0)';">&times;</span>
+                <table class="overlayTable table-outline table-content table-header">
+                    <tr>
+                        <th colspan="2">Thêm khách hàng</th>
+                    </tr>
+                    <tr>
+                        <td>Họ tên :</td>
+                        <td><input type="text" id="maspThem"></td>
+                    </tr>
+                    <tr>
+                        <td>Email :</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Tai khoan :</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Mat khau :</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="table-footer"> 
+                        <button onclick="themKhachHang()">THÊM</button> </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="khungSuaNguoiDung" class="overlay"></div>
+            <div id="thongbao"></div>
         </div> <!-- // khach hang -->
     </div> <!-- // main -->
 
@@ -282,5 +316,10 @@
 
     </footer>
 </body>
-
+ <script>
+    function themKhachHang(){
+        alert("Thêm thành công");
+        document.getElementById('Khungthemkhachhang').style.display = 'none';
+    }
+ </script>
 </html>
